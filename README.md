@@ -1,0 +1,1 @@
+These files were officially recovered from the original HorseyHerd Studios Hub, which has now been discontinued, and will be closed-source starting on January 1st of 2027. However, you can still get the files from here!
