@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://kw1rd1tmlpfd"]
+
+[ext_resource type="Texture2D" uid="uid://y2ocdtd4soxr" path="res://HorseyHerd Studios Hub Studio Tab Image.png" id="1_gb3je"]
+[ext_resource type="Script" uid="uid://c75vcxw7pocql" path="res://button.gd" id="2_dy40k"]
+[ext_resource type="Script" uid="uid://c17x5x70mkalv" path="res://button_3.gd" id="2_jcok2"]
+
+[node name="Developer Hub" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 161.0
+offset_right = 1106.0
+offset_bottom = 267.0
+text = "Before you can gain access to the developer hub application, you need to have a HorseyHerd Studios Developer Account. If you do not already
+have one, you can create one through the link below."
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1095.0
+offset_bottom = 135.0
+current_tab = 0
+tab_count = 4
+tab_0/title = "HorseyHerd Studios"
+tab_0/icon = ExtResource("1_gb3je")
+tab_1/title = "Indie Games"
+tab_2/title = "Developer Hub"
+tab_3/title = "horseyherdstudios.com"
+
+[node name="Button3" type="Button" parent="TabBar"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 3.0
+offset_right = 420.0
+offset_bottom = 139.0
+flat = true
+script = ExtResource("2_jcok2")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 275.0
+offset_right = 171.0
+offset_bottom = 324.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "Survey"
+underline = 1
+uri = "https://forms.gle/KznAYrmLZTuZTuDo9"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 307.0
+offset_bottom = 136.0
+flat = true
+script = ExtResource("2_dy40k")
+
+[node name="LinkButton2" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.031000001
+offset_left = 561.0
+offset_top = 1.0
+offset_right = 721.715
+offset_bottom = 115.695
+underline = 1
+uri = "https://sites.google.com/view/horseyherdstudios-com/home"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 1.0
+offset_right = 561.0
+offset_bottom = 135.0
+flat = true
+
+[connection signal="pressed" from="TabBar/Button3" to="TabBar/Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

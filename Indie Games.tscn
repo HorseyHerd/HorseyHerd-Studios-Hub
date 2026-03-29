@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://itddm3qv6223"]
+
+[ext_resource type="Texture2D" uid="uid://y2ocdtd4soxr" path="res://HorseyHerd Studios Hub Studio Tab Image.png" id="1_4qdya"]
+[ext_resource type="Script" uid="uid://c75vcxw7pocql" path="res://button.gd" id="2_alko5"]
+[ext_resource type="Script" uid="uid://bxh264lccfmx3" path="res://button_2.gd" id="3_75oj1"]
+
+[sub_resource type="GDScript" id="GDScript_75oj1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1094.0
+offset_bottom = 138.0
+current_tab = 0
+tab_count = 4
+tab_0/title = "HorseyHerd Studios"
+tab_0/icon = ExtResource("1_4qdya")
+tab_1/title = "Indie Games"
+tab_2/title = "Developer Hub"
+tab_3/title = "horseyherdstudios.com"
+
+[node name="Button2" type="Button" parent="TabBar"]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 1.0
+offset_right = 558.0
+offset_bottom = 139.0
+flat = true
+script = SubResource("GDScript_75oj1")
+
+[node name="LinkButton" type="LinkButton" parent="TabBar/Button2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.031000001
+offset_left = 137.0
+offset_top = -1.0
+offset_right = 333.275
+offset_bottom = 129.722
+underline = 1
+uri = "https://sites.google.com/view/horseyherdstudios-com/home"
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 33.0
+offset_right = 1140.0
+offset_bottom = 594.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 159.0
+offset_right = 1084.0
+offset_bottom = 228.0
+theme_override_colors/font_shadow_color = Color(2.8878452e-07, 0.65099585, 0.7236395, 0)
+theme_override_colors/font_outline_color = Color(1, 0.28842518, 0.645915, 1)
+theme_override_font_sizes/font_size = 50
+text = "Indie Game Hosting is currently unavailable"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 307.0
+offset_bottom = 136.0
+flat = true
+script = ExtResource("2_alko5")
+
+[node name="Button2" type="Button" parent="Button"]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 1.0
+offset_right = 558.0
+offset_bottom = 139.0
+flat = true
+script = ExtResource("3_75oj1")
+
+[connection signal="pressed" from="TabBar/Button2" to="TabBar/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button/Button2" to="Button/Button2" method="_on_pressed"]

@@ -1,0 +1,142 @@
+[gd_scene load_steps=6 format=3 uid="uid://l57i1yllpkoe"]
+
+[ext_resource type="Texture2D" uid="uid://y2ocdtd4soxr" path="res://HorseyHerd Studios Hub Studio Tab Image.png" id="1_ymi4u"]
+[ext_resource type="Script" uid="uid://c75vcxw7pocql" path="res://button.gd" id="2_mtroo"]
+[ext_resource type="Script" uid="uid://c17x5x70mkalv" path="res://button_3.gd" id="3_hnnyl"]
+[ext_resource type="Texture2D" uid="uid://bjp67ct16cys0" path="res://Ti-Kan Cover.png" id="3_mtroo"]
+[ext_resource type="Script" uid="uid://bxh264lccfmx3" path="res://button_2.gd" id="4_uaf0k"]
+
+[node name="Ti-Kan Store Page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 33.0
+offset_right = 1140.0
+offset_bottom = 594.0
+
+[node name="TabBar" type="TabBar" parent="VScrollBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -61.944004
+anchor_top = -0.048
+anchor_right = -61.944004
+anchor_bottom = -0.048
+offset_left = -0.00793457
+offset_top = -0.0720005
+offset_right = 1092.9921
+offset_bottom = 135.928
+current_tab = 0
+tab_count = 4
+tab_0/title = "HorseyHerd Studios"
+tab_0/icon = ExtResource("1_ymi4u")
+tab_1/title = "Indie Games"
+tab_2/title = "Developer Hub"
+tab_3/title = "horseyherdstudios.com"
+
+[node name="Button" type="Button" parent="VScrollBar/TabBar"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 307.0
+offset_bottom = 136.0
+flat = true
+script = ExtResource("2_mtroo")
+
+[node name="Button3" type="Button" parent="VScrollBar/TabBar"]
+layout_mode = 0
+offset_left = 308.0
+offset_right = 426.0
+offset_bottom = 136.0
+flat = true
+script = ExtResource("3_hnnyl")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.031000001
+offset_left = 564.0
+offset_top = 4.0
+offset_right = 730.68
+offset_bottom = 122.912
+underline = 1
+uri = "https://sites.google.com/view/horseyherdstudios-com/home"
+
+[node name="TiKanCover" type="Sprite2D" parent="."]
+position = Vector2(169, 300)
+texture = ExtResource("3_mtroo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 163.0
+offset_right = 1098.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0.841815, 0.6217963, 0, 1)
+theme_override_font_sizes/font_size = 21
+text = "Ti-Kan is a game with a protaganist named Ryven, who is in a war between the
+ living, the dead, and dragons. Wil you explore the kingdom of Ti-Kan and help
+save humanity? Purchase Ti-Kan and try it out!
+
+Ti-Kan and it's demo are not currently playable."
+
+[node name="Ti-Kan Purchase Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 448.0
+offset_right = 303.0
+offset_bottom = 516.0
+theme_override_colors/font_color = Color(0, 0.8018298, 0.11047692, 1)
+theme_override_colors/font_hover_color = Color(0, 0.7764706, 0.73333335, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(6.738305e-07, 0.7764413, 0.7341427, 1)
+theme_override_colors/icon_focus_color = Color(0, 0.7532781, 0.6682626, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0.7646077, 0.7810361, 1)
+theme_override_colors/icon_hover_color = Color(0, 0.80224186, 0.81761646, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0.7794221, 0.8257965, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0.6933626, 0.64876544, 0.4)
+theme_override_font_sizes/font_size = 38
+disabled = true
+text = "Purchase"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 532.0
+offset_right = 304.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 0.8, 0.10980392, 1)
+theme_override_colors/font_hover_color = Color(0, 0.7304555, 0.64211816, 1)
+theme_override_font_sizes/font_size = 36
+disabled = true
+text = "Demo"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 6.0
+offset_right = 566.0
+offset_bottom = 142.0
+flat = true
+
+[node name="Button2" type="Button" parent="Button2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -3.1050003
+anchor_right = -3.1050003
+offset_left = 423.28003
+offset_top = -1.0
+offset_right = 558.28
+offset_bottom = 137.0
+flat = true
+script = ExtResource("4_uaf0k")
+
+[connection signal="pressed" from="VScrollBar/TabBar/Button" to="VScrollBar/TabBar/Button" method="_on_pressed"]
+[connection signal="pressed" from="VScrollBar/TabBar/Button3" to="VScrollBar/TabBar/Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button2/Button2" to="Button2/Button2" method="_on_pressed"]

@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfoa11fa7mlv8"]
+
+[ext_resource type="Texture2D" uid="uid://y2ocdtd4soxr" path="res://HorseyHerd Studios Hub Studio Tab Image.png" id="1_6pfx5"]
+[ext_resource type="Texture2D" uid="uid://bjp67ct16cys0" path="res://Ti-Kan Cover.png" id="2_wkifl"]
+[ext_resource type="Script" uid="uid://dpk341nvakucb" path="res://Ti-Kan Button.gd" id="3_f2g0t"]
+[ext_resource type="Script" uid="uid://bxh264lccfmx3" path="res://button_2.gd" id="4_svmh3"]
+[ext_resource type="Script" uid="uid://c17x5x70mkalv" path="res://button_3.gd" id="5_nd5lx"]
+
+[node name="Games from HorseyHerd Studios" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1103.0
+offset_bottom = 138.0
+current_tab = 0
+tab_count = 4
+tab_0/title = "HorseyHerd Studios"
+tab_0/icon = ExtResource("1_6pfx5")
+tab_1/title = "Indie Games"
+tab_2/title = "Developer Hub"
+tab_3/title = "horseyherdstudios.com"
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 1122.0
+offset_top = 33.0
+offset_right = 1140.0
+offset_bottom = 594.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 253.0
+offset_right = 391.0
+offset_bottom = 521.0
+texture = ExtResource("2_wkifl")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 521.0
+offset_right = 225.13637
+offset_bottom = 552.0
+scale = Vector2(2.6399999, 2.3699186)
+text = "$10"
+script = ExtResource("3_f2g0t")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 562.0
+offset_top = 2.0
+offset_right = 761.0
+offset_bottom = 139.0
+uri = "https://sites.google.com/view/horseyherdstudios-com/home"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 1.0
+offset_right = 558.0
+offset_bottom = 139.0
+flat = true
+script = ExtResource("4_svmh3")
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 3.0
+offset_right = 426.0
+offset_bottom = 138.0
+flat = true
+script = ExtResource("5_nd5lx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 221.0
+offset_right = 396.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 22
+text = "Currently in Development"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
